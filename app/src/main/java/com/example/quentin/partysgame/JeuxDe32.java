@@ -8,20 +8,22 @@ import java.util.Collections;
 public class JeuxDe32 {
 
     private ArrayList<Carte> cartes;
+    private int index;
 
     public JeuxDe32() {
         super();
         cartes = new ArrayList<Carte>();
+        this.index = 0;
         String couleur;
         String valeur;
         for (int i = 7; i < 15; i++) {
             for (int y = 1; y < 5 ; y++){
                 if (i == 11)
-                    valeur = "Valet";
+                    valeur = "V";
                 else if (i == 12)
-                    valeur = "Dame ";
+                    valeur = "D";
                 else if (i == 13)
-                    valeur = "Roi";
+                    valeur = "R";
                 else if (i == 14)
                     valeur = "As";
                 else
@@ -35,15 +37,14 @@ public class JeuxDe32 {
                 else
                     couleur = "Coeur";
                 cartes.add(new Carte(couleur, valeur));
-                Log.i("quentin", couleur);
             }
         }
-        //Collections.shuffle(cartes);
+        Collections.shuffle(cartes);
     }
 
     public Carte tireUneCarte(){
-        Carte uneCarte = new Carte(cartes.get(0).couleur,cartes.get(0).valeur);
-        cartes.remove(0);
+        Carte uneCarte = cartes.get(index);
+        index++;
         return uneCarte;
     }
 }
