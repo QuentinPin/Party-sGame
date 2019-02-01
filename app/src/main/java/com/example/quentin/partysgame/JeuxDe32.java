@@ -25,17 +25,17 @@ public class JeuxDe32 {
                 else if (i == 13)
                     valeur = "R";
                 else if (i == 14)
-                    valeur = "As";
+                    valeur = "A";
                 else
                     valeur = "" + i;
                 if (y == 1)
-                    couleur = "Pique";
+                    couleur = "P";
                 else if (y == 2)
-                    couleur = "Trefle";
+                    couleur = "T";
                 else if (y == 3)
-                    couleur = "Carreau";
+                    couleur = "C";
                 else
-                    couleur = "Coeur";
+                    couleur = "Q";
                 cartes.add(new Carte(couleur, valeur));
             }
         }
