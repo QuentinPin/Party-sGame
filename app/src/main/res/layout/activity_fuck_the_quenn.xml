@@ -24,7 +24,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
 
             <ImageButton
                 android:id="@+id/TirCarteButton"
@@ -32,6 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:src="@drawable/dos"
+                android:background="@android:color/white"
+                android:layout_marginRight="5dp"
                 android:text="Button" />
 
             <ImageButton
@@ -39,15 +44,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                app:srcCompat="@drawable/dos"
                 android:background="@android:color/white"
-                app:srcCompat="@drawable/dos" />
+                android:layout_marginLeft="5dp"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consigne"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/couleurTitre"/>
 
         <TextView
             android:id="@+id/ConsigneTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:text="Veuillez tirez une carte" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

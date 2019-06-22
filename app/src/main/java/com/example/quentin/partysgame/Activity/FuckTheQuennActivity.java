@@ -1,10 +1,10 @@
 package com.example.quentin.partysgame.Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,6 +23,7 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_fuck_the_quenn);
         unJeux = new JeuxDe32();
         afficherCarteTire = findViewById(R.id.afficheCartButton);
@@ -33,15 +34,15 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
     }
 
     @Override
-    public void onClick(View v){
-        if(v == tirCarteButton){
+    public void onClick(View v) {
+        if (v == tirCarteButton) {
             Carte carteTire = unJeux.tireUneCarte();
             if (carteTire.valeur.equals("7")) {
-                consigneTextView.setText("Consigne : Le joueur peut à n'import quelle moment du jeux faire un signe distinctif. Le dernier joueur a le reproduire devrat boire une corgé.");
+                consigneTextView.setText("Le joueur peut à n'import quelle moment du jeux faire un signe distinctif. Le dernier joueur a le reproduire devrat boire une corgé.");
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
             }
             if (carteTire.valeur.equals("8")) {
-                consigneTextView.setText("Consigne : Le joueur doit donner un thème puis donner un mot qui convient au thème. Ensuite c'est a chacun des joueur d'en donner un. Le premier joueur qui na plus d'idée ou qui redis un mot dejas dit devrat boire une gorgé.");
+                consigneTextView.setText("Le joueur doit donner un thème puis donner un mot qui convient au thème. Ensuite c'est a chacun des joueur d'en donner un. Le premier joueur qui na plus d'idée ou qui redis un mot dejas dit devrat boire une gorgé.");
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
             }
             if (carteTire.valeur.equals("9")) {
@@ -50,25 +51,32 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
             }
             if (carteTire.valeur.equals("10")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Consigne : Quand le joueur commence a boire, tout les autre joueur commence a boire également. Le joueur ayant tiré a carte peut s'arreter a n'importe qu'elle moment. Les autre joueur eu ne peuvent pas s'arretez tant que leur voisin de droite ne c'est pas arreté");
+                consigneTextView.setText("Quand le joueur commence a boire, tout les autre joueur commence a boire également. Le joueur ayant tiré a carte peut s'arreter a n'importe qu'elle moment. Les autre joueur eu ne peuvent pas s'arretez tant que leur voisin de droite ne c'est pas arreté");
             }
             if (carteTire.valeur.equals("V")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Consigne : Le joueur qui tiré la carte doit dire \"Dans ma valise il y a\" suivie d'un mot de son choix. Les autres joueurs doivent a tour de roles redir ce quil a été dit précédament et ajouté un nouveau mot dans la valise. Le joueur qui ce trompe ou oublie un mot doit boire une gorgé");
+                consigneTextView.setText("Le joueur qui tiré la carte doit dire \"Dans ma valise il y a\" suivie d'un mot de son choix. Les autres joueurs doivent a tour de roles redir ce quil a été dit précédament et ajouté un nouveau mot dans la valise. Le joueur qui ce trompe ou oublie un mot doit boire une gorgé");
             }
             if (carteTire.valeur.equals("D")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Consigne : Tout les joueur doivent dire \"Fuck the queen\" et boire une gorgé en l'honneur de la reinne.");
+                consigneTextView.setText("Tout les joueur doivent dire \"Fuck the queen\" et boire une gorgé en l'honneur de la reinne.");
             }
             if (carteTire.valeur.equals("R")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Consigne : ");
+                nbRoisSortie++;
+                consigneTextView.setText("");
             }
             if (carteTire.valeur.equals("As")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Consigne : Le joueur qui a tiré la carte doit boire une gorgé tout seul.");
+                consigneTextView.setText("Le joueur qui a tiré la carte doit boire une gorgé tout seul.");
             }
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     public int imageCarteTire(Carte carteTire) {
@@ -76,7 +84,7 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
         if (carteTire.couleur.equals("Q")) {
             if (carteTire.valeur.equals("7")) {
                 return R.drawable.sept_pique;
-            }else if (carteTire.valeur.equals("8")) {
+            } else if (carteTire.valeur.equals("8")) {
                 return R.drawable.huit_coeur;
             } else if (carteTire.valeur.equals("9")) {
                 return R.drawable.neuf_coeur;
