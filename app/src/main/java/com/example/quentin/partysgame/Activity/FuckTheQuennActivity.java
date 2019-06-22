@@ -68,20 +68,20 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
             }
             if (carteTire.valeur.equals("8")) {
-                consigneTextView.setText("Le joueur doit donner un thème puis donner un mot qui convient au thème. Ensuite c'est a chacun des joueur d'en donner un. Le premier joueur qui na plus d'idée ou qui redis un mot dejas dit devrat boire une gorgé.");
+                consigneTextView.setText("Le joueur doit donner un thème puis donner un mot qui convient au thème. Ensuite c'est a chacun des joueur d'en donner un. Le premier joueur qui n'a plus d'idée ou qui redis un mot dejas dit devrat boire une gorgé.");
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
             }
             if (carteTire.valeur.equals("9")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Consigne : Le joueur peut aller au toilette ou faire une petite pose a n'importe quel momment de la partie");
+                consigneTextView.setText("Consigne : Le joueur peut aller au toilette ou faire une petite pose a n'importe quel momment de la partie.");
             }
             if (carteTire.valeur.equals("10")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Quand le joueur commence a boire, tout les autre joueur commence a boire également. Le joueur ayant tiré a carte peut s'arreter a n'importe qu'elle moment. Les autre joueur eu ne peuvent pas s'arretez tant que leur voisin de droite ne c'est pas arreté");
+                consigneTextView.setText("Quand le joueur commence a boire, tout les autre joueur commence a boire également. Le joueur ayant tiré a carte peut s'arreter a n'importe qu'elle moment. Les autre joueur ne peuvent pas s'arretez tant que leur voisin de droite ne c'est pas arreté.");
             }
             if (carteTire.valeur.equals("V")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
-                consigneTextView.setText("Le joueur qui tiré la carte doit dire \"Dans ma valise il y a\" suivie d'un mot de son choix. Les autres joueurs doivent a tour de roles redir ce quil a été dit précédament et ajouté un nouveau mot dans la valise. Le joueur qui ce trompe ou oublie un mot doit boire une gorgé");
+                consigneTextView.setText("Le joueur qui tiré la carte doit dire \"Dans ma valise il y a\" suivie d'un mot de son choix. Les autres joueurs doivent a tour de roles redir ce quil a été dit précédament et ajouté un nouveau mot dans la valise. Le joueur qui ce trompe ou oublie un mot doit boire une gorgé.");
             }
             if (carteTire.valeur.equals("D")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
