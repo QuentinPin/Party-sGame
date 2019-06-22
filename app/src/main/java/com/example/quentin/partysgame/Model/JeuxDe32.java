@@ -1,6 +1,4 @@
-package com.example.quentin.partysgame;
-
-import android.util.Log;
+package com.example.quentin.partysgame.Model;
 
 import java.util.ArrayList;
 import java.util.Collections;

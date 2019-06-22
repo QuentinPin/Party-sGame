@@ -1,4 +1,4 @@
-package com.example.quentin.partysgame;
+package com.example.quentin.partysgame.Model;
 
 public class Carte {
 
