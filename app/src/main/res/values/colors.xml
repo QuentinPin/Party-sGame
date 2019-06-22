@@ -6,4 +6,5 @@
     <color name="buttonBackground">#009BFD</color>
     <color name="couleurTitre">#64C4E9</color>
     <color name="buttonText">#FFF</color>
+    <color name="couleurNomJeu">#FF0000</color>
 </resources>
