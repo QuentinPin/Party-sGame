@@ -6,12 +6,10 @@ import java.util.Collections;
 public class JeuxDe32 {
 
     private ArrayList<Carte> cartes;
-    private int index;
 
     public JeuxDe32() {
         super();
         cartes = new ArrayList<Carte>();
-        this.index = 0;
         String couleur;
         String valeur;
         for (int i = 7; i < 15; i++) {
@@ -41,8 +39,12 @@ public class JeuxDe32 {
     }
 
     public Carte tireUneCarte(){
-        Carte uneCarte = cartes.get(index);
-        index++;
+        Carte uneCarte = cartes.get(0);
+        cartes.remove(0);
         return uneCarte;
+    }
+
+    public int carteRestante(){
+        return cartes.size();
     }
 }

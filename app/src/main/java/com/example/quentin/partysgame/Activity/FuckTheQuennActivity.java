@@ -14,10 +14,33 @@ import com.example.quentin.partysgame.R;
 
 public class FuckTheQuennActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /**
+     * ImageButton permetant de tiré une carte du jeu
+     */
     private ImageButton tirCarteButton;
-    private TextView consigneTextView;
-    private JeuxDe32 unJeux;
+    /**
+     * ImageButton affichant la carte tiré
+     */
     private ImageButton afficherCarteTire;
+    /**
+     * Text view permetant d'affiché les consigne de la carte tiré
+     */
+    private TextView consigneTextView;
+    /**
+     * Text view permetant d'affiché le nombre de cartes restant
+     */
+    private TextView nbCarteRestanteTextView;
+    /**
+     * Text view permetant d'affiché le nombre de roi restant
+     */
+    private TextView nbRoieRestantTextView;
+    /**
+     * Jeu de carte
+     */
+    private JeuxDe32 unJeux;
+    /**
+     * Nombre de roi tiré
+     */
     private int nbRoisSortie;
 
     @Override
@@ -29,6 +52,8 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
         afficherCarteTire = findViewById(R.id.afficheCartButton);
         consigneTextView = findViewById(R.id.ConsigneTextView);
         tirCarteButton = findViewById(R.id.TirCarteButton);
+        nbCarteRestanteTextView = findViewById(R.id.textView_nombre_de_carte_restante);
+        nbRoieRestantTextView = findViewById(R.id.textView_nombre_de_roi_tire);
         nbRoisSortie = 0;
         tirCarteButton.setOnClickListener(this);
     }
@@ -37,6 +62,7 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         if (v == tirCarteButton) {
             Carte carteTire = unJeux.tireUneCarte();
+            nbCarteRestanteTextView.setText("Nombre de cartes restantes : " + unJeux.carteRestante());
             if (carteTire.valeur.equals("7")) {
                 consigneTextView.setText("Le joueur peut à n'import quelle moment du jeux faire un signe distinctif. Le dernier joueur a le reproduire devrat boire une corgé.");
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
@@ -64,6 +90,7 @@ public class FuckTheQuennActivity extends AppCompatActivity implements View.OnCl
             if (carteTire.valeur.equals("R")) {
                 afficherCarteTire.setImageResource(imageCarteTire(carteTire));
                 nbRoisSortie++;
+                nbRoieRestantTextView.setText("Nombre de roi restant : " + (4-nbRoisSortie));
                 consigneTextView.setText("");
             }
             if (carteTire.valeur.equals("As")) {

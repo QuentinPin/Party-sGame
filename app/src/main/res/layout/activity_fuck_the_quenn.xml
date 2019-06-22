@@ -53,6 +53,29 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Informations sur la partie"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/couleurTitre"/>
+
+        <TextView
+            android:id="@+id/textView_nombre_de_carte_restante"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de cartes restantes : 32"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/textView_nombre_de_roi_tire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de roi restant : 4"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Consigne"
             android:textStyle="bold"
             android:textSize="20dp"
